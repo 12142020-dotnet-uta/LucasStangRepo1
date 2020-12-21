@@ -9,6 +9,8 @@ namespace RockPaperScissors_NoDb
             int userChoice;
             bool userResponseInt;
             string userResponse;
+            string y;
+            string n;
 
             Random randomNumber = new Random(10);
             int computerChoice = randomNumber.Next(1, 4);
@@ -28,7 +30,7 @@ namespace RockPaperScissors_NoDb
                 {
                    break;
                 }
-            }
+
             Console.WriteLine("Your choice was: " + userChoice);
 
             
@@ -49,6 +51,24 @@ namespace RockPaperScissors_NoDb
             {
                 Console.WriteLine("We're sorry. The computer won :(");
             }
+                        Console.WriteLine("Would you like to play again?\n\tPress y for yes, or press n for no.");
+            string playAgain = Console.ReadLine();
+            if(playAgain != (y || n))
+            {
+                Console.WriteLine("The user response was invalid. Goodbye.");
+            }
+            else if(playAgain == y)
+            {
+                continue;
+            }
+            else if(playAgain == n)
+            {
+                Console.WriteLine("Thank you for playing. Goodbye.");
+                break;
+            }
+
+            }
+
 
         }
     }
